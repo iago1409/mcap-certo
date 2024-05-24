@@ -1,33 +1,32 @@
 const express = require('express');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-const dotenv = require('dotenv');
 const path = require('path');
-
-dotenv.config();
-
 const app = express();
 
-// Middlewares
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
-// EJS setup
+// Configurar EJS como motor de templates
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'src/views'));
+app.set('views', path.join(__dirname, 'views')); // Certifique-se de que o caminho esteja correto
 
-// Static files
+// Configurar pasta de arquivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log('MongoDB connected'))
-    .catch(err => console.log(err));
+// Rota para a página principal
+app.get('/', (req, res) => {
+    res.render('index', { title: 'Home' });
+});
 
-// Routes
-app.use('/', require('./src/routes/index'));
-app.use('/auth', require('./src/routes/auth'));
-app.use('/email', require('./src/routes/email'));
+// Rotas para as outras páginas
+app.get('/page1', (req, res) => {
+    res.render('page1', { title: 'Page 1' });
+});
 
+app.get('/page2', (req, res) => {
+    res.render('page2', { title: 'Page 2' });
+});
+
+app.get('/page3', (req, res) => {
+    res.render('page3', { title: 'Page 3' });
+});
+
+// Iniciar o servidor
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
