@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/vendor/aos/aos.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    
+    <style>
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            margin-right: 10px;
+            height: 80px; /* Ajuste o valor conforme necessário */
+        }
+        .about-img {
+            width: 50%; /* Ajuste o valor conforme necessário */
+        }
+        .timeline-section {
+            position: relative;
+            padding: 50px 0;
+        }
+        .timeline {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .timeline-bar {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #000;
+            transform: translateX(-50%);
+        }
+        .timeline-point {
+            position: relative;
+            width: 100%;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        .timeline-point img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #000;
+            background: #fff;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .timeline-point .timeline-content {
+            display: none;
+            position: absolute;
+            left: calc(50% + 60px);
+            top: 50%;
+            transform: translateY(-50%);
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .timeline-info {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 300px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+        .timeline-info-img {
+            width: 100%;
+            height: auto;
+        }
+        .timeline-info-text {
+            margin-top: 10px;
+        }
+        @media (max-width: 768px) {
+            .timeline-point .timeline-content {
+                left: 10px;
+                right: 10px;
+                top: 100%;
+                transform: translateY(10px);
+            }
+            .timeline-info {
+                width: calc(100% - 40px);
+                bottom: 10px;
+                left: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header id="header" class="fixed-top d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
+            <h1 class="logo">
+                <img src="/img/logo.png" alt="Logo" class="logo-img">
+                <a href="/">Moraes de Carvalho Advocacia</a>
+            </h1>
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="/">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#about">Sobre</a></li>
+                    <li><a class="nav-link scrollto" href="#services">Servicos</a></li>
+                    <li><a class="nav-link scrollto" href="#contact">Contato</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+
+    <!-- Hero Section -->
+    <section id="hero" class="d-flex align-items-center">
+        <div class="container" data-aos="fade-up">
+            <h1>Bem Vindos Moraes de Carvalho Advocacia</h1>
+            <h2>Prosperando com voce</h2>
+            <a href="#about" class="btn-get-started scrollto">Vamos comecar</a>
+        </div>
+    </section><!-- End Hero -->
+
+    <main id="main">
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="/img/about.png" class="img-fluid about-img" alt="Sobre nós">
+                    </div>
+                    <div class="col-lg-6 pt-4 pt-lg-0 content">
+                        <h3>Sobre Moraes de Carvalho Advocacia</h3>
+                        <p class="fst-italic">
+                            Nossa firma promove o melhor servico aos clientes.
+                        </p>
+                        <ul>
+                            <li><i class="bi bi-check-circle"></i> Parceiros experientes e confiantes.</li>
+                            <li><i class="bi bi-check-circle"></i> Grande gama de servicos .</li>
+                            <li><i class="bi bi-check-circle"></i> Abordagem diferenciada para cada caso.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Section -->
+
+        <!-- Services Section -->
+        <section id="services" class="services section-bg">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>Servicos</h2>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                        <div class="icon-box">
+                            <div class="icon"><i class="fas fa-gavel"></i></div>
+                            <h4><a href="">Contencioso Tributário (Administrativo e Judicial)</a></h4>
+                            <p>Nos defendendo os interesses dos contribuintes em processos administrativos e judiciais relacionados a tributos</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+                        <div class="icon-box">
+                            <div class="icon"><i class="fas fa-balance-scale"></i></div>
+                            <h4><a href="">Consultoria Tributária</a></h4>
+                            <p> Oferece orientações estratégicas para empresas e indivíduos, visando otimizar a carga tributária, garantir conformidade com as leis fiscais e aproveitar benefícios fiscais disponíveis.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+                        <div class="icon-box">
+                            <div class="icon"><i class="fas fa-handshake"></i></div>
+                            <h4><a href="">Recuperacao de PIS e CONFINS </a></h4>
+                            <p>Confie na Moraes de Carvalho Advocacia para maximizar os benefícios fiscais da sua empresa e garantir que você não esteja pagando mais do que o necessário. Entre em contato conosco para saber mais sobre como podemos ajudá-lo a recuperar créditos de PIS e COFINS.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Services Section -->
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>Contato</h2>
+                    <p>Entre em contato</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="info-box mb-4">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h3>Nosso endereco</h3>
+                            <p>Av. Paulista 2202, edificio av paulista, Andar 14 Sala 08</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="info-box  mb-4">
+                            <i class="fas fa-envelope"></i>
+                
+                            <p>carla@mcap.com.br</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="info-box  mb-4">
+                            <i class="fas fa-phone-alt"></i>
+                            <h3>Nos ligue</h3>
+                            <p>+55 027 99762-3271</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="info-box  mb-4">
+                            <i class="fas fa-clock"></i>
+                            <h3>Estamos disponiveis </h3>
+                            <p>Segunda  - Sexta: 9:00 AM to 5:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Contact Section -->
+
+        <!-- Timeline Section -->
+        <section id="timeline" class="timeline-section">
+            <div class="container">
+                <h2>Nossa História</h2>
+                <div class="timeline">
+                    <div class="timeline-bar"></div>
+                    <div class="timeline-point" data-year="2020">
+                        <img src="/img/event1.jpg" alt="Evento 1">
+                        <div class="timeline-content">
+                            <h3>Evento 1</h3>
+                            <p>Descrição do evento 1.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-point" data-year="2021">
+                        <img src="/img/event2.jpg" alt="Evento 2">
+                        <div class="timeline-content">
+                            <h3>Evento 2</h3>
+                            <p>Descrição do evento 2.</p>
+                        </div>
+                    </div>
+                    <!-- Adicione mais pontos conforme necessário -->
+                </div>
+                <div class="timeline-info">
+                    <img src="" alt="Evento Atual" class="timeline-info-img">
+                    <div class="timeline-info-text"></div>
+                </div>
+            </div>
+        </section><!-- End Timeline Section -->
+    </main><!-- End #main -->
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <span class="text-muted">© 2024 Moraes de Carvalho Advocacia. Todos os direitos reservados.</span>
+                </div>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.min.js"></script>
+    <script src="/vendor/aos/aos.js"></script>
+    <script src="/js/main.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    
+</body>
+</html>
